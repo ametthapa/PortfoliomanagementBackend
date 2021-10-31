@@ -28,6 +28,18 @@ const Schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  soldAmount: {
+    type: Number,
+    default: 0,
+  },
+  buyAmount: {
+    type: Number,
+    default: 0,
+  },
+  investment: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("stocks", Schema);
