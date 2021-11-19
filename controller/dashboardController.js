@@ -7,9 +7,10 @@ module.exports.getAllStocks = async (req, res, next) => {
   let totalInvestment = 0;
   let totalsoldAmount = 0;
   let totalcurrentAmount = 0;
+  let totalBuyAmount = 0;
   let overallprofit = 0;
   for (const element of stock) {
-    totalInvestment += elemnt.investment;
+    totalInvestment += element.investment;
     if (element.transactionType === "sell") {
       totalQuantity -= element.quantity;
       totalsoldAmount += element.soldAmount;
