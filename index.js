@@ -3,14 +3,10 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const db = require("./utility/db");
 
-const app = express();
+var cors = require("cors");
 
-app.all("*", function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+const app = express();
+app.use(cors());
 
 const stockRoutes = require("./router/stockrouter.js");
 const dashboardRoutes = require("./router/dashboardRouter.js");
