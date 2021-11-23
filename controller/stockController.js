@@ -10,21 +10,29 @@ module.exports.getAllStock = async (req, res, next) => {
 
 //for inserting
 module.exports.insertStock = async (req, res, next) => {
-  let { stockName, transactionType, quantity, amount, transactionDate } =
-    req.body;
+  let {
+    stockName,
+    transactionType,
+    quantity,
+    amount,
+    transactionDate,
+    soldAmount,
+    investment,
+    buyAmount,
+  } = req.body;
   console.log(req.body);
   // const count = await Stock.countDocuments();
-  let investment = 0;
-  let soldAmount = 0;
-  let buyAmount = 0;
+  // let investment = 0;
+  // let soldAmount = 0;
+  // let buyAmount = 0;
 
-  if (transactionType === "sell") {
-    soldAmount = quantity * amount;
-  } else if (transactionType === "buy") {
-    investment = quantity * amount;
+  // if (transactionType === "sell") {
+  //   soldAmount = quantity * amount;
+  // } else if (transactionType === "buy") {
+  //   investment = quantity * amount;
 
-    buyAmount = quantity * amount;
-  }
+  //   buyAmount = quantity * amount;
+  // }
 
   const stock = new Stock({
     // S_N: count + 1,
